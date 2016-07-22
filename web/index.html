@@ -16,6 +16,46 @@
 
 </head>
 <body ng-app="ngIndexApp" ng-controller="ExampleController">
+<div class="col-12 animate-fade" ng-show="loggingPage">
+    <form id="logInBox">
+        <input type="text" placeholder="Username" ng-model="username">
+        <input type="text" placeholder="Password">
+        <input type="submit" value="PLAY" class="logInButton" ng-click="logIn()">
+    </form>
+</div>
+<div class="col-12 animate-fade" ng-show="mainFrame">
+    <div id="mainFrame">
+        <img src="assets/images/fireBall.png" ng-hide="fireBallAction" class="methodHeading">
+        <div class="mainBlock">
+            <p class="name">{{username}}</p>
+            <img src="assets/images/warrior-png-15.png" width="100%" height="100%">
+            <div class="healthWrapperPlayer">
+                <div class="healthBar" ng-style="healthBarSizePlayer"></div>
+            </div>
+            <span class="health">{{currentPlayerHealth}}/{{maxPlayerHealth}}</span>
+            <button class="logInButton actionButton" title="attacks for 10-15 damage">Attack</button>
+            <button class="logInButton actionButton">Defend</button>
+            <button class="logInButton actionButton" ng-click="fireBall()" ng-disabled="!fireBallAction">Fireball</button>
+        </div>
+        <div class="mainBlock">
+            <div class="scrollBox">
+                An HTML scroll box is a box that grows scroll bars when it's contents are too large to fit in the box. How do you make the box? You create the box using the HTML div tag. Then, to make the box scroll, you apply the CSS overflow property to the div.
 
+                But, you don't need to worry about the technical details if you don't want to. You can simply copy and paste the HTML scroll box code below. Of course, you can change the values to suit (such as the size of the scroll box, color etc)
+            </div>
+        </div>
+        <div class="mainBlock">
+            <p class="name">Fire Elemental</p>
+            <img src="assets/images/FireElemental.png" width="100%" height="100%" id="fireElem">
+            <div class="healthWrapperBoss" id="fireElemHealth">
+                <div class="healthBar" ng-style="healthBarSizeBoss"></div>
+            </div>
+            <span class="health">{{currentBossHealth}}/{{maxBossHealth}}</span>
+            <div class="scrollBox scrollBoxInfo">
+                Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description Description
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

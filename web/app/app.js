@@ -4,28 +4,23 @@
 (function(angular) {
     'use strict';
     angular.module('ngIndexApp', ['ngAnimate'])
-        .controller('ExampleController', ['$scope', '$http', function($scope, $http) {
+        .controller('ExampleController', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
             
             // DEFAULTS INIT AND GLOBAL VARIABLES
-            $scope.data = {
-                availableOptions: [
-                    {id: '2', name: '2'},
-                    {id: '3', name: '3'},
-                    {id: '4', name: '4'},
-                    {id: '5', name: '5'}
-                ]
+            $scope.loggingPage = true;
+            $scope.mainFrame = false;
+            $scope.username = "";
+            $scope.healthBarSizePlayer = {
+                width: '100%'
             };
-            $scope.a={};
-            for(var i = 0; i<5; i++){
-                for(var j = 0; j<5;j++){
-                    $scope.a[""+i+j]="";
-                }
-            }
-            $scope.showRow = [true, false, false];
-            $scope.showCol = [true, false, false];
-            $scope.rows = "3";
-            $scope.columns = "3";
-            $scope.showBlocks = true;
+            $scope.healthBarSizeBoss = {
+                width: '100%'
+            };
+            $scope.maxPlayerHealth = 200;
+            $scope.currentPlayerHealth = $scope.maxPlayerHealth;
+            $scope.maxBossHealth = 400;
+            $scope.currentBossHealth = $scope.maxBossHealth;
+            $scope.fireBallAction = true;
 
             //slider variables
             var slidesCount = 2;
@@ -185,6 +180,23 @@
             $scope.previousMethod = function() {
                 $scope.$methodIndex = ($scope.$methodIndex == 0) ? $scope.$methodIndex=methodsCount-1 : $scope.$methodIndex-=1 ;
             };
+            
+            // LOGGING BUTTON
+            $scope.logIn = function(){
+                if ($scope.username==""){
+                    alert("Enter a username!");
+                } else {
+                    $scope.loggingPage = false;
+                    $scope.mainFrame = true;
+                }
+            };
+            
+            $scope.fireBall = function() {
+                $scope.fireBallAction = false;
+                $timeout(function(){
+                    $scope.fireBallAction = true;
+                }, 1000);
+            }
 
         }]);
 })(window.angular);
