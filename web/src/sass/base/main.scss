@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: whitesmoke;
+  width: 100%;
+  margin:0;
+  border-top: 5px solid #7e7e7e;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.container{
+  padding: 0 15%;
+  width: 66.66%;
+}
+
+.buttonGrid {
+  width: 16.66%;
+  float: left;
+  padding: 15px;
+}
+
+.containerHead {
+  padding: 0;
+  width: 100%
+}
+
+.headingWrapper {
+  padding: 10px 15px;
+  width: 66.66%;
+  float: left;
+}
+
+.methodHeading {
+  width: 32%;
+  text-align: center;
+  font-size: 25px;
+}
+
+input[type="text"] {
+  border: 0;
+  border-bottom: 3px solid #555555;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  background: transparent;
+  outline: none;
+  height: 60px;
+  width: 100%;
+  color: black;
+  font-size: 40px;
+  font-family: Tahoma;
+  text-align: center;
+  /* text-shadow: 0 1px 1px #000; */
+}
+
+h1 {
+  text-align: center;
+  padding-top: 20px;
+}
+
+#heading {
+  font-family: Tahoma;
+  font-weight: 500;
+  font-size: 55px;
+}
+
+.selector {
+  width: 100%;
+  height: 50px;
+  background-color: whitesmoke;
+  border:2px solid black;
+  font-size: 40px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.buttonMain {
+  background-color: whitesmoke;
+  border:2px solid black;
+  cursor:pointer;
+  color:black;
+  font-family:Arial;
+  font-size:40px;
+  font-weight:400;
+  padding:6px 0;
+  text-decoration:none;
+  text-align: center;
+  margin: 10px 0;
+  height: 200%;
+  transition: all 0.3s ease 0s;
+  width: 100%;
+}
+.buttonMain:hover {
+  color: white;
+  background-color:black;
+}
+.buttonMain:active {
+  position:relative;
+  top:1px;
+}
+
+.result td{
+  border: 0;
+  background: transparent;
+  outline: none;
+  height: 60px;
+  color: black;
+  font-size: 40px;
+  font-family: Tahoma;
+  text-align: center;
+}
+#answer {
+  text-align: center;
+  font-size:300%;
+  padding: 0 auto;
+  margin: 0;
+  font-weight: 400;
+}
+
+option {
+  font-size: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    padding: 0 10%;
+  }
+
+  .methodHeading {
+    width: 42%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .col-2 {
+    display: none;
+  }
+
+  .col-8, .container {
+    width:100%;
+    padding: 0;
+  }
+
+  h1 {
+    padding-top: 0;
+  }
+
+  .buttonMain {
+    margin: 0 0.3%;
+    width: 99.4%;
+  }
+
+  .methodHeading {
+    width: 62%;
+  }
+}
